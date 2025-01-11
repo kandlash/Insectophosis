@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://cn15i7v1kskfi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w61bw"]
+size = Vector3(2.7, 0.3, 3.29468)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6auno"]
+albedo_color = Color(0, 0.0499257, 0.103248, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ut2fe"]
+material = SubResource("StandardMaterial3D_6auno")
+size = Vector3(1, 1, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f44a5"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qf13s"]
+material = SubResource("StandardMaterial3D_f44a5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_58l74"]
+
+[node name="table" type="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.454709, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00274658)
+shape = SubResource("BoxShape3D_w61bw")
+
+[node name="table" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.69781, 0, 0, 0, 0.178491, 0, 0, 0, 2.20176, 0, 0, 0)
+mesh = SubResource("BoxMesh_ut2fe")
+skeleton = NodePath("../..")
+
+[node name="player_place" type="MeshInstance3D" parent="table"]
+transform = Transform3D(0.263953, 0, 0, 0, 0.0714538, 0, 0, 0, 0.77209, -0.135123, 0.500278, 0)
+mesh = SubResource("BoxMesh_qf13s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="table/player_place"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0313393, 0, 0.202048, -0.266907)
+mesh = SubResource("BoxMesh_58l74")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="table/player_place"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0313393, 0, 0.202048, -0.0154632)
+mesh = SubResource("BoxMesh_58l74")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="table/player_place"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0313393, 0, 0.202048, 0.237908)
+mesh = SubResource("BoxMesh_58l74")
+
+[node name="card_point" type="Node3D" parent="table/player_place"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4129)
+
+[node name="card_point2" type="Node3D" parent="table/player_place"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.154897)
+
+[node name="card_point3" type="Node3D" parent="table/player_place"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.117009)
+
+[node name="card_point4" type="Node3D" parent="table/player_place"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.383754)
+
+[node name="card_place2" type="MeshInstance3D" parent="table"]
+transform = Transform3D(0.263953, 0, 0, 0, 0.0714538, 0, 0, 0, 0.77209, 0.147353, 0.500278, 0)
+mesh = SubResource("BoxMesh_qf13s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="table/card_place2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0313393, 0, 0.202048, -0.266907)
+mesh = SubResource("BoxMesh_58l74")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="table/card_place2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0313393, 0, 0.202048, -0.0154632)
+mesh = SubResource("BoxMesh_58l74")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="table/card_place2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0313393, 0, 0.202048, 0.237908)
+mesh = SubResource("BoxMesh_58l74")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

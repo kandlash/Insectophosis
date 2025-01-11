@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo1hkdxd3fx0t"]
+
+[ext_resource type="Script" path="res://scripts/hand.gd" id="1_nb5lv"]
+[ext_resource type="PackedScene" uid="uid://bs2im8ok04b5o" path="res://scenes/card.tscn" id="2_65p7f"]
+
+[node name="hand" type="Node3D"]
+transform = Transform3D(0.783964, -0.620806, 0, 0.620806, 0.783964, 0, 0, 0, 1, -1.10234, 0.564143, 0)
+script = ExtResource("1_nb5lv")
+card_scene = ExtResource("2_65p7f")

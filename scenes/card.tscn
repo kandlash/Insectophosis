@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs2im8ok04b5o"]
+
+[ext_resource type="Script" path="res://scripts/card.gd" id="1_8cra6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7t4ss"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xqsb7"]
+size = Vector3(0.910522, 0.0398876, 0.543945)
+
+[node name="card" type="StaticBody3D"]
+script = ExtResource("1_8cra6")
+
+[node name="card" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.914431, 0, 0, 0, 0.0358521, 0, 0, 0, 0.562295, 0, 0, 0)
+mesh = SubResource("BoxMesh_7t4ss")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00440215, -0.00126705, 0)
+shape = SubResource("BoxShape3D_xqsb7")

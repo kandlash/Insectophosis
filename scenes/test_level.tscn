@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv56au188d8q5"]
+
+[ext_resource type="PackedScene" uid="uid://dd5i08ci5bsl" path="res://scenes/level_manager.tscn" id="1_jeueq"]
+[ext_resource type="Script" path="res://scripts/player_head_camera.gd" id="2_n0eqh"]
+[ext_resource type="PackedScene" uid="uid://cn15i7v1kskfi" path="res://scenes/table.tscn" id="2_rji1c"]
+[ext_resource type="PackedScene" uid="uid://bo1hkdxd3fx0t" path="res://scenes/hand.tscn" id="3_mf47d"]
+[ext_resource type="Script" path="res://scripts/table_topdown_camera.gd" id="5_px578"]
+
+[node name="test_level" type="Node3D"]
+
+[node name="LevelManager" parent="." instance=ExtResource("1_jeueq")]
+
+[node name="table" parent="." instance=ExtResource("2_rji1c")]
+
+[node name="player_head_camera" type="Camera3D" parent="."]
+transform = Transform3D(-0.0196502, 0.339378, -0.940445, 0.00708964, 0.94065, 0.339304, 0.999782, 1.37936e-09, -0.0208901, -3.32688, 1.77659, 0)
+current = true
+fov = 90.0
+script = ExtResource("2_n0eqh")
+
+[node name="hand" parent="." instance=ExtResource("3_mf47d")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41538, 1.66171, 0)
+visible = false
+light_color = Color(1, 0.380392, 1, 1)
+light_energy = 4.047
+light_size = 0.54
+light_specular = 9.818
+omni_range = 1.973
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.714668, 0.699464, 0, -0.699464, 0.714668, -1.37794, 3.92073, 1.7715)
+light_energy = 6.55
+light_indirect_energy = 0.059
+light_volumetric_fog_energy = 6.271
+light_size = 0.094
+light_specular = 2.947
+spot_range = 5.47088
+spot_angle = 42.3255
+
+[node name="table_topdown_camera" type="Camera3D" parent="."]
+transform = Transform3D(-1.0437e-08, 0.971076, -0.238771, 4.24471e-08, 0.238771, 0.971076, 1, -2.76015e-16, -4.37114e-08, -1.11851, 2.22924, 0)
+fov = 90.0
+script = ExtResource("5_px578")
