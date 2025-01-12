@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://xiq3fggbh4kc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0rnb0"]
+size = Vector3(0.918945, 0.0527344, 0.558838)
+
+[node name="card_point" type="StaticBody3D" groups=["card_point"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_0rnb0")

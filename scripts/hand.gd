@@ -22,6 +22,10 @@ func add_card_to_hand():
 	player_hand.append(card)
 	add_child(card)
 	update_card_positions()
+
+func remove_card(card):
+	player_hand.erase(card)
+	update_card_positions()
 	
 	
 func update_card_positions():

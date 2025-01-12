@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cn15i7v1kskfi"]
+[gd_scene load_steps=8 format=3 uid="uid://cn15i7v1kskfi"]
+
+[ext_resource type="PackedScene" uid="uid://xiq3fggbh4kc" path="res://scenes/card_point.tscn" id="1_2hjsi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w61bw"]
-size = Vector3(2.7, 0.3, 3.29468)
+size = Vector3(2.7, 0.237769, 3.29468)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6auno"]
 albedo_color = Color(0, 0.0499257, 0.103248, 1)
@@ -22,7 +24,7 @@ material = SubResource("StandardMaterial3D_f44a5")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.454709, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00274658)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0311157, 0.00274658)
 shape = SubResource("BoxShape3D_w61bw")
 
 [node name="table" type="MeshInstance3D" parent="."]
@@ -46,18 +48,6 @@ mesh = SubResource("BoxMesh_58l74")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0313393, 0, 0.202048, 0.237908)
 mesh = SubResource("BoxMesh_58l74")
 
-[node name="card_point" type="Node3D" parent="table/player_place"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4129)
-
-[node name="card_point2" type="Node3D" parent="table/player_place"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.154897)
-
-[node name="card_point3" type="Node3D" parent="table/player_place"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.117009)
-
-[node name="card_point4" type="Node3D" parent="table/player_place"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.383754)
-
 [node name="card_place2" type="MeshInstance3D" parent="table"]
 transform = Transform3D(0.263953, 0, 0, 0, 0.0714538, 0, 0, 0, 0.77209, 0.147353, 0.500278, 0)
 mesh = SubResource("BoxMesh_qf13s")
@@ -73,6 +63,18 @@ mesh = SubResource("BoxMesh_58l74")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="table/card_place2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0313393, 0, 0.202048, 0.237908)
 mesh = SubResource("BoxMesh_58l74")
+
+[node name="card_point" parent="." instance=ExtResource("1_2hjsi")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.349125, 0.107953, -0.669836)
+
+[node name="card_point2" parent="." instance=ExtResource("1_2hjsi")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.349125, 0.107953, -0.232991)
+
+[node name="card_point3" parent="." instance=ExtResource("1_2hjsi")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.349125, 0.107953, 0.204067)
+
+[node name="card_point4" parent="." instance=ExtResource("1_2hjsi")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.349125, 0.107953, 0.646012)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

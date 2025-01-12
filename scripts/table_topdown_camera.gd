@@ -1,15 +1,37 @@
 extends Camera3D
 
-
+@onready var level_manager := $"../LevelManager"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	set_process_input(false)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("click"):
+		var new_object = shoot_ray()
+		if not new_object:
+			return
+		if not new_object.is_in_group("card_point"):
+			return
+		if not level_manager.selected_card:
+			return
+		level_manager.hand.remove_child(level_manager.selected_card)
+		new_object.add_child(level_manager.selected_card)
+		var tween = create_tween()
+		tween.tween_property(
+			level_manager.selected_card,
+			"global_position",
+			new_object.global_position,
+			0.25
+		).set_trans(Tween.TRANS_SPRING)
+		tween.tween_property(
+			level_manager.selected_card,
+			"global_rotation",
+			new_object.global_rotation,
+			0.25
+		).set_trans(Tween.TRANS_SPRING)
+		
+		level_manager.hand.remove_card(level_manager.selected_card)
+		level_manager.unselect_card()
 
 func shoot_ray():
 	var mouse_pos = get_viewport().get_mouse_position()

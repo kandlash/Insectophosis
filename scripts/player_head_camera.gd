@@ -2,24 +2,35 @@ extends Camera3D
 
 var selected_object
 var selected_card
+@onready var level_manager := $"../LevelManager"
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		var new_object = shoot_ray()
 		if not new_object or not new_object.is_in_group("cards"):
 			if selected_card != null:
-				selected_card.make_unselected()
-				selected_card.is_selected = false
-				selected_card = null
+				unselect_card()
 			return
+			
 		if new_object.is_in_group("cards"):
+			if selected_card and selected_card != new_object:
+				unselect_card()
 			selected_card = new_object
 			if selected_card.is_selected:
-				selected_card.make_unselected()
-				selected_card.is_selected = false
+				unselect_card()
 				return
 			selected_card.is_selected = true
 			selected_card.make_selected()
-		
+			level_manager.selected_card = selected_card
+
+func select_card():
+	pass
+
+func unselect_card(animation=true):
+	if animation:
+		selected_card.make_unselected()
+	selected_card.is_selected = false
+	selected_card = null
+	level_manager.selected_card = null
 
 func shoot_ray():
 	var mouse_pos = get_viewport().get_mouse_position()

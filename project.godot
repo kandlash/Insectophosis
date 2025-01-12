@@ -13,6 +13,10 @@ config_version=5
 config/name="Insectophosis"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
+[global_group]
+
+card_point=""
+
 [input]
 
 click={
