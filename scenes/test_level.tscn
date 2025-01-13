@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv56au188d8q5"]
+[gd_scene load_steps=9 format=3 uid="uid://cv56au188d8q5"]
 
 [ext_resource type="PackedScene" uid="uid://dd5i08ci5bsl" path="res://scenes/level_manager.tscn" id="1_jeueq"]
 [ext_resource type="Script" path="res://scripts/player_head_camera.gd" id="2_n0eqh"]
 [ext_resource type="PackedScene" uid="uid://cn15i7v1kskfi" path="res://scenes/table.tscn" id="2_rji1c"]
 [ext_resource type="PackedScene" uid="uid://bo1hkdxd3fx0t" path="res://scenes/hand.tscn" id="3_mf47d"]
 [ext_resource type="Script" path="res://scripts/table_topdown_camera.gd" id="5_px578"]
+[ext_resource type="PackedScene" uid="uid://dji2dbytkucc" path="res://scenes/caterpillar_card.tscn" id="6_0po5a"]
+[ext_resource type="PackedScene" uid="uid://bmn5q17yg825e" path="res://scenes/card_deck.tscn" id="6_esvkd"]
+[ext_resource type="PackedScene" uid="uid://dd63bftr53f7n" path="res://scenes/spiny_caterpillar_card.tscn" id="8_7wwo8"]
 
 [node name="test_level" type="Node3D"]
 
@@ -19,6 +22,7 @@ fov = 90.0
 script = ExtResource("2_n0eqh")
 
 [node name="hand" parent="." instance=ExtResource("3_mf47d")]
+transform = Transform3D(0.783964, -0.620806, 0, 0.620806, 0.783964, 0, 0, 0, 1, -0.989318, 0.701679, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41538, 1.66171, 0)
@@ -43,3 +47,10 @@ spot_angle = 42.3255
 transform = Transform3D(-1.0437e-08, 0.971076, -0.238771, 4.24471e-08, 0.238771, 0.971076, 1, -2.76015e-16, -4.37114e-08, -1.11851, 2.22924, 0)
 fov = 90.0
 script = ExtResource("5_px578")
+
+[node name="card_deck" parent="." instance=ExtResource("6_esvkd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32463, 0.0788693, 2.34977)
+cards = {
+ExtResource("6_0po5a"): 2,
+ExtResource("8_7wwo8"): 2
+}

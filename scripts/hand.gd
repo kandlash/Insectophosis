@@ -18,7 +18,11 @@ func _input(event: InputEvent) -> void:
 
 func add_card_to_hand():
 	var card = card_scene.instantiate()
-	card.add_to_group("cards")
+	player_hand.append(card)
+	add_child(card)
+	update_card_positions()
+
+func add_card(card):
 	player_hand.append(card)
 	add_child(card)
 	update_card_positions()
