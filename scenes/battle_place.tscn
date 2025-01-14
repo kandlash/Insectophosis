@@ -12,8 +12,6 @@ material = SubResource("StandardMaterial3D_f44a5")
 [sub_resource type="BoxMesh" id="BoxMesh_cx85b"]
 
 [node name="battle_place" type="Node3D"]
-
-[node name="battle_place_manager" type="Node3D" parent="."]
 script = ExtResource("1_8kuqb")
 
 [node name="enemy_place" type="Node3D" parent="."]

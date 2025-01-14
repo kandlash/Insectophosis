@@ -5,8 +5,12 @@ var selected_card
 
 @onready var level_manager := $"../LevelManager"
 func _input(event: InputEvent) -> void:
+	if level_manager.turn_base_manager.game_state != level_manager.turn_base_manager.GameStates.player_turn:
+		return
 	if event.is_action_pressed("click"):
 		var new_object = shoot_ray()
+		if new_object.is_in_group("turn_ender"):
+			level_manager.turn_base_manager.end_turn("player")
 		if new_object and new_object.name == "card_deck":
 			if level_manager.hand.player_hand.size() == 2:
 				return
@@ -30,6 +34,9 @@ func _input(event: InputEvent) -> void:
 			selected_card.is_selected = true
 			selected_card.make_selected()
 			level_manager.selected_card = selected_card
+			return
+		
+
 
 func select_card():
 	pass

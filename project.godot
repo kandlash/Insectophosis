@@ -24,6 +24,7 @@ window/stretch/mode="viewport"
 
 card_point=""
 cards=""
+turn_ender=""
 
 [input]
 
