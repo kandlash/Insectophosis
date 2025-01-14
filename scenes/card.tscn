@@ -16,6 +16,8 @@ radius = 0.1
 height = 0.5
 
 [node name="card" type="StaticBody3D" groups=["cards"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_8cra6")
 
 [node name="card" type="MeshInstance3D" parent="."]
@@ -62,3 +64,9 @@ font_size = 52
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.0129628, 0)
 material_override = SubResource("StandardMaterial3D_qqxnr")
 mesh = SubResource("CapsuleMesh_i088a")
+
+[node name="attack_RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(3, 0, 0)
+collision_mask = 2
+debug_shape_custom_color = Color(1.97336e-06, 0.592836, 0.522157, 1)
+debug_shape_thickness = 3

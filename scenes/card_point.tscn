@@ -1,9 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://xiq3fggbh4kc"]
+[gd_scene load_steps=5 format=3 uid="uid://xiq3fggbh4kc"]
+
+[ext_resource type="Texture2D" uid="uid://dgdjkysbhj87x" path="res://assets/sprites/test_border.png" id="1_u6wp1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0rnb0"]
 size = Vector3(0.918945, 0.0527344, 0.558838)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uffna"]
+transparency = 1
+albedo_texture = ExtResource("1_u6wp1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ukwev"]
 
 [node name="card_point" type="StaticBody3D" groups=["card_point"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_0rnb0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.903898, 0, 0, 0, -2.38183e-08, 1, 0, -0.5449, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_uffna")
+mesh = SubResource("QuadMesh_ukwev")

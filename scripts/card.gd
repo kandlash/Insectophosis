@@ -12,8 +12,12 @@ var prev_position
 @onready var hp_label := $hp_label
 @onready var attack_label := $attack_label
 @onready var price_label := $price_label
+@onready var attack_ray := $attack_RayCast3D
 
 var is_ready = false
+var is_enemy = false
+
+signal get_back_ended
 
 func _ready() -> void:
 	var newMaterial = StandardMaterial3D.new() # Создаём новый материал
@@ -27,9 +31,40 @@ func _ready() -> void:
 	hp_label.text = str(hp)
 	attack_label.text = str(dmg)
 	price_label.text = str(price)
-	
+
 func attack():
-	pass
+	var tween = create_tween()
+	prev_position = position
+	tween.tween_property(
+		self,
+		"position",
+		position + Vector3(0.5, 0.2, 0),
+		0.15
+	).set_trans(Tween.TRANS_SPRING)
+	tween.tween_callback(get_back)
+	if not attack_ray.is_colliding():
+		return
+	var collider = attack_ray.get_collider()
+	if not collider.is_in_group("cards"):
+		return
+	collider.get_damage(dmg)
+
+func get_back():
+	var tween = create_tween()
+	tween.tween_property(self,
+	 "position",
+	 prev_position,
+	 0.15).set_trans(Tween.TRANS_SPRING)
+	get_back_ended.emit()
+
+func get_damage(damage: int):
+	hp -= damage
+	if hp <= 0:
+		queue_free()
+	update_hp_label()
+
+func update_hp_label():
+	hp_label.text = str(hp)
 	
 func make_ready():
 	is_ready = true	
@@ -43,8 +78,4 @@ func make_selected():
 	 0.15).set_trans(Tween.TRANS_SPRING)
 
 func make_unselected():
-	var tween = create_tween()
-	tween.tween_property(self,
-	 "position",
-	 prev_position,
-	 0.15).set_trans(Tween.TRANS_SPRING)
+	get_back()

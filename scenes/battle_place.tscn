@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bur7d2bnxf58y"]
+[gd_scene load_steps=6 format=3 uid="uid://bur7d2bnxf58y"]
 
 [ext_resource type="PackedScene" uid="uid://xiq3fggbh4kc" path="res://scenes/card_point.tscn" id="1_0u0cy"]
+[ext_resource type="Script" path="res://scripts/battle_place_manager.gd" id="1_8kuqb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f44a5"]
 albedo_color = Color(1, 0, 0, 1)
@@ -12,128 +13,139 @@ material = SubResource("StandardMaterial3D_f44a5")
 
 [node name="battle_place" type="Node3D"]
 
-[node name="card_place5" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.5, 0, 0.5)
-mesh = SubResource("BoxMesh_cqivs")
+[node name="battle_place_manager" type="Node3D" parent="."]
+script = ExtResource("1_8kuqb")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="card_place5"]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, -0.45)
-mesh = SubResource("BoxMesh_cx85b")
+[node name="enemy_place" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="card_place5"]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0.45)
-mesh = SubResource("BoxMesh_cx85b")
-
-[node name="card_point" parent="card_place5" instance=ExtResource("1_0u0cy")]
-transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="card_place6" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.5, 0, 1.5)
-mesh = SubResource("BoxMesh_cqivs")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="card_place6"]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, -0.45)
-mesh = SubResource("BoxMesh_cx85b")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="card_place6"]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0.45)
-mesh = SubResource("BoxMesh_cx85b")
-
-[node name="card_point" parent="card_place6" instance=ExtResource("1_0u0cy")]
-transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="card_place7" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.5, 0, -0.5)
-mesh = SubResource("BoxMesh_cqivs")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="card_place7"]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, -0.45)
-mesh = SubResource("BoxMesh_cx85b")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="card_place7"]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0.45)
-mesh = SubResource("BoxMesh_cx85b")
-
-[node name="card_point" parent="card_place7" instance=ExtResource("1_0u0cy")]
-transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="card_place8" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.5, 0, -1.5)
-mesh = SubResource("BoxMesh_cqivs")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="card_place8"]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, -0.45)
-mesh = SubResource("BoxMesh_cx85b")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="card_place8"]
-transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0.45)
-mesh = SubResource("BoxMesh_cx85b")
-
-[node name="card_point" parent="card_place8" instance=ExtResource("1_0u0cy")]
-transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="player_place" type="Node3D" parent="."]
-
-[node name="card_place" type="MeshInstance3D" parent="player_place"]
+[node name="card_place" type="MeshInstance3D" parent="enemy_place"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.5, 0, 0.5)
 mesh = SubResource("BoxMesh_cqivs")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player_place/card_place"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="enemy_place/card_place"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, -0.45)
 mesh = SubResource("BoxMesh_cx85b")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="player_place/card_place"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="enemy_place/card_place"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0.45)
 mesh = SubResource("BoxMesh_cx85b")
 
-[node name="card_point" parent="player_place/card_place" instance=ExtResource("1_0u0cy")]
+[node name="card_point" parent="enemy_place/card_place" instance=ExtResource("1_0u0cy")]
 transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="card_place4" type="MeshInstance3D" parent="player_place"]
+[node name="card_place4" type="MeshInstance3D" parent="enemy_place"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.5, 0, 1.5)
 mesh = SubResource("BoxMesh_cqivs")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player_place/card_place4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="enemy_place/card_place4"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, -0.45)
 mesh = SubResource("BoxMesh_cx85b")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="player_place/card_place4"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="enemy_place/card_place4"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0.45)
 mesh = SubResource("BoxMesh_cx85b")
 
-[node name="card_point" parent="player_place/card_place4" instance=ExtResource("1_0u0cy")]
+[node name="card_point" parent="enemy_place/card_place4" instance=ExtResource("1_0u0cy")]
 transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="card_place2" type="MeshInstance3D" parent="player_place"]
+[node name="card_place2" type="MeshInstance3D" parent="enemy_place"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.5, 0, -0.5)
 mesh = SubResource("BoxMesh_cqivs")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player_place/card_place2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="enemy_place/card_place2"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, -0.45)
 mesh = SubResource("BoxMesh_cx85b")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="player_place/card_place2"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="enemy_place/card_place2"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0.45)
 mesh = SubResource("BoxMesh_cx85b")
 
-[node name="card_point" parent="player_place/card_place2" instance=ExtResource("1_0u0cy")]
+[node name="card_point" parent="enemy_place/card_place2" instance=ExtResource("1_0u0cy")]
 transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="card_place3" type="MeshInstance3D" parent="player_place"]
+[node name="card_place3" type="MeshInstance3D" parent="enemy_place"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0.5, 0, -1.5)
 mesh = SubResource("BoxMesh_cqivs")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player_place/card_place3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="enemy_place/card_place3"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, -0.45)
 mesh = SubResource("BoxMesh_cx85b")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="player_place/card_place3"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="enemy_place/card_place3"]
 transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0.45)
 mesh = SubResource("BoxMesh_cx85b")
 
-[node name="card_point" parent="player_place/card_place3" instance=ExtResource("1_0u0cy")]
+[node name="card_point" parent="enemy_place/card_place3" instance=ExtResource("1_0u0cy")]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="player_place" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)
+
+[node name="card_place5" type="MeshInstance3D" parent="player_place"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.5, 0, 0.5)
+mesh = SubResource("BoxMesh_cqivs")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player_place/card_place5"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, -0.45)
+mesh = SubResource("BoxMesh_cx85b")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="player_place/card_place5"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0.45)
+mesh = SubResource("BoxMesh_cx85b")
+
+[node name="card_point" parent="player_place/card_place5" instance=ExtResource("1_0u0cy")]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="card_place6" type="MeshInstance3D" parent="player_place"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.5, 0, 1.5)
+mesh = SubResource("BoxMesh_cqivs")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player_place/card_place6"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, -0.45)
+mesh = SubResource("BoxMesh_cx85b")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="player_place/card_place6"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0.45)
+mesh = SubResource("BoxMesh_cx85b")
+
+[node name="card_point" parent="player_place/card_place6" instance=ExtResource("1_0u0cy")]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="card_place7" type="MeshInstance3D" parent="player_place"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.5, 0, -0.5)
+mesh = SubResource("BoxMesh_cqivs")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player_place/card_place7"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, -0.45)
+mesh = SubResource("BoxMesh_cx85b")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="player_place/card_place7"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0.45)
+mesh = SubResource("BoxMesh_cx85b")
+
+[node name="card_point" parent="player_place/card_place7" instance=ExtResource("1_0u0cy")]
+transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="card_place8" type="MeshInstance3D" parent="player_place"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, -0.5, 0, -1.5)
+mesh = SubResource("BoxMesh_cqivs")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player_place/card_place8"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, -0.45)
+mesh = SubResource("BoxMesh_cx85b")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="player_place/card_place8"]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.5, 0.45)
+mesh = SubResource("BoxMesh_cx85b")
+
+[node name="card_point" parent="player_place/card_place8" instance=ExtResource("1_0u0cy")]
 transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)

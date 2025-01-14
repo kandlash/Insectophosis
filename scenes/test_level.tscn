@@ -51,6 +51,6 @@ script = ExtResource("5_px578")
 [node name="card_deck" parent="." instance=ExtResource("6_esvkd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32463, 0.0788693, 2.34977)
 cards = {
-ExtResource("6_0po5a"): 2,
-ExtResource("8_7wwo8"): 2
+ExtResource("6_0po5a"): 4,
+ExtResource("8_7wwo8"): 4
 }
