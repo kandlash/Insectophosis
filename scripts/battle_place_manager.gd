@@ -8,23 +8,24 @@ extends Node3D
 ]
 
 @onready var enemy_card_places = [
-	$"../enemy_place/card_place/card_point",
-	$"../enemy_place/card_place2/card_point",
 	$"../enemy_place/card_place3/card_point",
+	$"../enemy_place/card_place2/card_point",
+	$"../enemy_place/card_place/card_point",
 	$"../enemy_place/card_place4/card_point",
 ]
 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
-		make_step()
+		make_step(player_card_places, false)
+	if event.is_action_pressed("enemy_attack"):
+		make_step(enemy_card_places, true)
 
-func make_step():
-	for card_place in player_card_places:
+func make_step(places, is_enemy):
+	for card_place in places:
 		var card = card_place.get_children()[-1]
 		if not card.is_in_group("cards"):
 			continue
-		
-		card.attack()
+		card.attack(is_enemy)
 		await card.get_back_ended
 		

@@ -19,6 +19,9 @@ var is_enemy = false
 
 signal get_back_ended
 
+var player_attack_ray_dir = Vector3(3, 0, 0)
+var enemy_attack_ray_dir = Vector3(-3, 0, 0)
+
 func _ready() -> void:
 	var newMaterial = StandardMaterial3D.new() # Создаём новый материал
 	newMaterial.albedo_color = Color(
@@ -32,13 +35,16 @@ func _ready() -> void:
 	attack_label.text = str(dmg)
 	price_label.text = str(price)
 
-func attack():
+func attack(is_enemy):
+	attack_ray.target_position = enemy_attack_ray_dir if is_enemy else player_attack_ray_dir
+	attack_ray.force_raycast_update()
+	
 	var tween = create_tween()
 	prev_position = position
 	tween.tween_property(
 		self,
 		"position",
-		position + Vector3(0.5, 0.2, 0),
+		position + Vector3(-0.8 if is_enemy else 0.8, 0.3, 0),
 		0.15
 	).set_trans(Tween.TRANS_SPRING)
 	tween.tween_callback(get_back)
