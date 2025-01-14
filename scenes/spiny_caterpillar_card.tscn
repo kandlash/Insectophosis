@@ -8,3 +8,4 @@ script = ExtResource("2_wuaqd")
 card_name = "spiny cater"
 hp = 2
 dmg = 2
+price = 2

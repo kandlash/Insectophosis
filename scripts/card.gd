@@ -49,6 +49,12 @@ func attack(is_enemy):
 	).set_trans(Tween.TRANS_SPRING)
 	tween.tween_callback(get_back)
 	if not attack_ray.is_colliding():
+		if is_enemy:
+			Globals.player.hp -= dmg
+			Globals.game_ui.update_player_hp()
+		else:
+			Globals.enemy.hp -= dmg
+			Globals.game_ui.update_enemy_hp()
 		return
 	var collider = attack_ray.get_collider()
 	if not collider.is_in_group("cards"):

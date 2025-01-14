@@ -4,20 +4,23 @@ var selected_object
 var selected_card
 
 @onready var level_manager := $"../LevelManager"
+@onready var player := $"../player"
+
 func _input(event: InputEvent) -> void:
 	if level_manager.turn_base_manager.game_state != level_manager.turn_base_manager.GameStates.player_turn:
 		return
 	if event.is_action_pressed("click"):
 		var new_object = shoot_ray()
-		if new_object.is_in_group("turn_ender"):
+		if new_object and new_object.is_in_group("turn_ender"):
 			level_manager.turn_base_manager.end_turn("player")
 		if new_object and new_object.name == "card_deck":
-			if level_manager.hand.player_hand.size() == 2:
+			if level_manager.hand.player_hand.size() == 2 or player.cards == 0:
 				return
 			var new_card = new_object.get_card()
 			if not new_card:
 				return
 			level_manager.hand.add_card(new_card)
+			player.update_cards(-1)
 			return
 		if not new_object or not new_object.is_in_group("cards"):
 			if selected_card != null:

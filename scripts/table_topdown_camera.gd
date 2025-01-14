@@ -1,6 +1,7 @@
 extends Camera3D
 
 @onready var level_manager := $"../LevelManager"
+@onready var player := $"../player"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_process_input(false)
@@ -16,9 +17,9 @@ func _input(event: InputEvent) -> void:
 			return
 		if not level_manager.selected_card:
 			return
-		print(new_object)
-		print(new_object.is_empty)
 		if not new_object.is_empty:
+			return
+		if player.recources -level_manager.selected_card.price < 0:
 			return
 		level_manager.hand.remove_child(level_manager.selected_card)
 		new_object.add_child(level_manager.selected_card)
@@ -36,8 +37,11 @@ func _input(event: InputEvent) -> void:
 			0.25
 		).set_trans(Tween.TRANS_SPRING)
 		
+		player.update_recources(-level_manager.selected_card.price)
+		Globals.game_ui.update_recources()
 		level_manager.hand.remove_card(level_manager.selected_card)
 		level_manager.unselect_card()
+		
 
 func shoot_ray():
 	var mouse_pos = get_viewport().get_mouse_position()

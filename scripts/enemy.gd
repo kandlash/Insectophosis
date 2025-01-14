@@ -6,13 +6,16 @@ var enemy_cards = [PackedScene]
 var enemy_places = []
 var enemy_hand = 2
 var enemy_resources = 2
+var hp = 20
 @onready var turn_base_manager := $"../TurnBaseManager"
 @onready var battle_place := $"../battle_place"
 
 func _ready() -> void:
 	turn_base_manager.connect("end_turned", _on_end_turned)
 	enemy_places = battle_place.get_enemy_places()
-
+	Globals.set_enemy(self)
+	
+	
 func enemy_turn():
 	var cards = []
 	for i in range(0, enemy_hand):

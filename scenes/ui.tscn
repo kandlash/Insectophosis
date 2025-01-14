@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce2h5gl4vrl5r"]
+
+[ext_resource type="FontFile" uid="uid://bimwi2yvlmgm0" path="res://assets/Minercraftory.ttf" id="1_3lv0s"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_o4w2j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oe0h0"]
+font = ExtResource("1_3lv0s")
+font_size = 32
+
+[node name="ui" type="CanvasLayer"]
+script = ExtResource("1_o4w2j")
+
+[node name="recources_label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "text"
+label_settings = SubResource("LabelSettings_oe0h0")
+
+[node name="player_hp_label" type="Label" parent="."]
+offset_top = 84.0
+offset_right = 40.0
+offset_bottom = 107.0
+size_flags_horizontal = 4
+text = "text"
+label_settings = SubResource("LabelSettings_oe0h0")
+
+[node name="enemy_hp_label" type="Label" parent="."]
+offset_top = 127.0
+offset_right = 40.0
+offset_bottom = 150.0
+size_flags_horizontal = 4
+text = "text"
+label_settings = SubResource("LabelSettings_oe0h0")
