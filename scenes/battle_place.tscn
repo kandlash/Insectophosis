@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bur7d2bnxf58y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f44a5"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cqivs"]
+material = SubResource("StandardMaterial3D_f44a5")
+
+[node name="battle_place" type="Node3D"]
+
+[node name="player_place" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+mesh = SubResource("BoxMesh_cqivs")
