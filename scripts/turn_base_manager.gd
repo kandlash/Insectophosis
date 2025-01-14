@@ -24,6 +24,7 @@ func end_turn(by_who):
 		level_manager.start_s_cam_transition()
 		await level_manager.end_trans
 	game_state = GameStates.enemy_turn if by_who == "player" else GameStates.player_turn
-	Globals.player.reset()
-	Globals.game_ui.update_recources()
+	if by_who == "enemy":
+		Globals.player.reset()
+		Globals.game_ui.update_recources()
 	end_turned.emit(by_who)
