@@ -45,7 +45,7 @@ func attack(is_enemy):
 		self,
 		"position",
 		position + Vector3(-0.8 if is_enemy else 0.8, 0.3, 0),
-		0.15
+		0.3
 	).set_trans(Tween.TRANS_SPRING)
 	tween.tween_callback(get_back)
 	if not attack_ray.is_colliding():

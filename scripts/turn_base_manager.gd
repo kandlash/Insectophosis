@@ -20,9 +20,9 @@ func end_turn(by_who):
 		battle_place.attack("enemy")
 		
 	await battle_place.end_turn
-
-	level_manager.start_s_cam_transition()
-	await level_manager.end_trans
+	if by_who == "enemy":
+		level_manager.start_s_cam_transition()
+		await level_manager.end_trans
 	game_state = GameStates.enemy_turn if by_who == "player" else GameStates.player_turn
 	end_turned.emit(by_who)
 	print('emitted!: ', by_who)
