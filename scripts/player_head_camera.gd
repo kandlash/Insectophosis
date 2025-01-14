@@ -8,6 +8,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		var new_object = shoot_ray()
 		if new_object and new_object.name == "card_deck":
+			if level_manager.hand.player_hand.size() == 2:
+				return
 			var new_card = new_object.get_card()
 			if not new_card:
 				return
