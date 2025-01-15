@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctcmupyfwch12"]
+
+[ext_resource type="Texture2D" uid="uid://7w3vp86jrc1r" path="res://assets/sprites/opener.png" id="1_hcmr3"]
+[ext_resource type="ArrayMesh" uid="uid://driib4kkkt12j" path="res://assets/models/opener.obj" id="2_04pqc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6t32k"]
+albedo_texture = ExtResource("1_hcmr3")
+
+[node name="opener" type="Node3D"]
+
+[node name="Opener" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_6t32k")
+mesh = ExtResource("2_04pqc")

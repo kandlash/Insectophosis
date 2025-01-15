@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cv56au188d8q5"]
+[gd_scene load_steps=27 format=3 uid="uid://cv56au188d8q5"]
 
 [ext_resource type="PackedScene" uid="uid://dd5i08ci5bsl" path="res://scenes/level_manager.tscn" id="1_jeueq"]
 [ext_resource type="Script" path="res://scripts/player_head_camera.gd" id="2_n0eqh"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bkdnqwcf7njen" path="res://scenes/pipe_1.tscn" id="20_a8ikg"]
 [ext_resource type="PackedScene" uid="uid://c40qbh8squisg" path="res://scenes/pipe_2.tscn" id="21_sdc3t"]
 [ext_resource type="PackedScene" uid="uid://d1bp4hdf11op1" path="res://scenes/pipe_3.tscn" id="22_we0ef"]
+[ext_resource type="PackedScene" uid="uid://ctcmupyfwch12" path="res://scenes/opener.tscn" id="23_0y115"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4i7pd"]
 
@@ -143,10 +144,16 @@ transform = Transform3D(1, 0, 0, 0, -0.00881379, 0.999961, 0, -0.999961, -0.0088
 transform = Transform3D(0.0504186, -0.00880258, 0.998689, -0.998728, -0.000444379, 0.0504167, 0, -0.999961, -0.00881379, -0.118296, 0.669719, -3.51948)
 
 [node name="pipe_6" parent="pipes" instance=ExtResource("21_sdc3t")]
-transform = Transform3D(0.612598, -0.01112, 0.790316, -0.79039, -0.00539936, 0.61258, -0.00254468, -0.999924, -0.0120968, -1.70309, 0.064116, -3.51948)
+transform = Transform3D(0.810997, -0.00914077, 0.584978, -0.585044, -0.00832186, 0.810959, -0.00254468, -0.999924, -0.0120968, -0.860756, 0.064116, -3.51948)
 
 [node name="pipe_3" parent="pipes" instance=ExtResource("22_we0ef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.57594, 3.3046, 3.13329)
 
 [node name="pipe_5" parent="pipes" instance=ExtResource("22_we0ef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55232, 1.59505, -3.4115)
+
+[node name="pipe_7" parent="pipes" instance=ExtResource("22_we0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20014, 2.29681, -3.4115)
+
+[node name="opener" parent="pipes" instance=ExtResource("23_0y115")]
+transform = Transform3D(0.00239931, 0.0590185, -0.137881, -0.149953, -0.0017007, -0.00333736, -0.0028764, 0.137891, 0.0589729, -2.53979, 0.197415, -2.0313)
