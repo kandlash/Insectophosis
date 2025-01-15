@@ -54,6 +54,7 @@ environment = SubResource("Environment_o2uwe")
 [node name="LevelManager" parent="." instance=ExtResource("1_jeueq")]
 
 [node name="table" parent="." instance=ExtResource("2_rji1c")]
+transform = Transform3D(2.78056, 0, 0, 0, 2, 0, 0, 0, 2, -0.0388034, 0, 0)
 
 [node name="player_head_camera" type="Camera3D" parent="."]
 transform = Transform3D(-0.0196502, 0.339378, -0.940445, 0.00708964, 0.94065, 0.339304, 0.999782, 1.37936e-09, -0.0208901, -3.32688, 1.77659, 0)
@@ -101,12 +102,13 @@ ExtResource("8_d3hvq"): 999
 [node name="ui" parent="." instance=ExtResource("10_jmx7d")]
 
 [node name="turn_ender" parent="." instance=ExtResource("11_06ypx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68455, 0.175537, -2.37246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68455, 0.188432, -2.37246)
 
 [node name="battle_place" parent="." instance=ExtResource("12_41851")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.129992, 0)
 
 [node name="enemy" parent="." instance=ExtResource("13_widnl")]
+transform = Transform3D(0.0793229, 0.0844605, -0.993264, -0.00672368, 0.996427, 0.0841924, 0.996826, 0, 0.0796074, 4.23576, -0.150906, 0)
 
 [node name="player" parent="." instance=ExtResource("14_2adw7")]
 
@@ -141,7 +143,7 @@ transform = Transform3D(1, 0, 0, 0, -0.00881379, 0.999961, 0, -0.999961, -0.0088
 transform = Transform3D(0.0504186, -0.00880258, 0.998689, -0.998728, -0.000444379, 0.0504167, 0, -0.999961, -0.00881379, -0.118296, 0.669719, -3.51948)
 
 [node name="pipe_6" parent="pipes" instance=ExtResource("21_sdc3t")]
-transform = Transform3D(0.612604, -0.00696633, 0.79036, -0.79039, -0.00539936, 0.61258, 1.0509e-10, -0.999961, -0.00881379, -1.70309, 0.064116, -3.51948)
+transform = Transform3D(0.612598, -0.01112, 0.790316, -0.79039, -0.00539936, 0.61258, -0.00254468, -0.999924, -0.0120968, -1.70309, 0.064116, -3.51948)
 
 [node name="pipe_3" parent="pipes" instance=ExtResource("22_we0ef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.57594, 3.3046, 3.13329)

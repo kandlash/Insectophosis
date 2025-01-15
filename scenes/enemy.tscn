@@ -1,9 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://g11oq2rsi5o5"]
+[gd_scene load_steps=7 format=3 uid="uid://g11oq2rsi5o5"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_4o15g"]
 [ext_resource type="PackedScene" uid="uid://dji2dbytkucc" path="res://scenes/caterpillar_card.tscn" id="2_58sjh"]
 [ext_resource type="PackedScene" uid="uid://dab8a228lpkhi" path="res://scenes/spiny_cate_card.tscn" id="3_ul4qv"]
+[ext_resource type="Texture2D" uid="uid://dg0jdttjarh6j" path="res://assets/sprites/enemy2.png" id="4_yx7sy"]
+[ext_resource type="ArrayMesh" uid="uid://bfsygytxbxg27" path="res://assets/models/enemy.obj" id="5_lmy16"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_optup"]
+albedo_texture = ExtResource("4_yx7sy")
 
 [node name="enemy" type="Node3D"]
 script = ExtResource("1_4o15g")
 enemy_cards = [ExtResource("2_58sjh"), ExtResource("3_ul4qv")]
+
+[node name="Enemy" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_optup")
+mesh = ExtResource("5_lmy16")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.209812, 2.06595, 2.37526)
+light_color = Color(0.952941, 0.0509804, 0.145098, 1)
+light_energy = 11.074
+omni_range = 2.87305
