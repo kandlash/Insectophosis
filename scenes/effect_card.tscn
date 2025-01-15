@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://tyuc3yr6gob0"]
+
+[ext_resource type="FontFile" uid="uid://djn4dvgw8mpda" path="res://assets/ka1.ttf" id="1_ocd5q"]
+[ext_resource type="Script" path="res://scripts/effect_card.gd" id="1_ooum0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7t4ss"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wm882"]
+size = Vector3(0.910522, 0.0398876, 0.543945)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqxnr"]
+albedo_color = Color(0.901961, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_gsw6s"]
+
+[node name="effect_card" type="StaticBody3D" groups=["cards"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ooum0")
+
+[node name="card" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.914431, 0, 0, 0, 0.0358521, 0, 0, 0, 0.562295, 0, 0, 0)
+mesh = SubResource("BoxMesh_7t4ss")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00440215, -0.00126705, 0)
+shape = SubResource("BoxShape3D_wm882")
+
+[node name="name_label" type="Label3D" parent="."]
+transform = Transform3D(-1.64167e-08, 0.37557, 1.64167e-08, 0, -1.64167e-08, 0.37557, 0.37557, 1.64167e-08, 7.17596e-16, 0.355405, 0.0381118, 0)
+texture_filter = 0
+text = "card name"
+font = ExtResource("1_ocd5q")
+font_size = 37
+
+[node name="effect_description" type="Label3D" parent="."]
+transform = Transform3D(-1.64167e-08, 0.37557, 1.64167e-08, 0, -1.64167e-08, 0.37557, 0.37557, 1.64167e-08, 7.17596e-16, -0.269419, 0.0381118, 0)
+texture_filter = 0
+text = "card name"
+font = ExtResource("1_ocd5q")
+font_size = 16
+
+[node name="price_label" type="Label3D" parent="."]
+transform = Transform3D(-1.64167e-08, 0.37557, 1.64167e-08, 0, -1.64167e-08, 0.37557, 0.37557, 1.64167e-08, 7.17596e-16, 0.176536, 0.0381118, 0.192774)
+texture_filter = 0
+text = "0
+"
+font = ExtResource("1_ocd5q")
+font_size = 37
+
+[node name="effect_mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.227414, 0, 0, 0, -9.94057e-09, -0.227414, 0, 0.227414, -9.94057e-09, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_qqxnr")
+mesh = SubResource("SphereMesh_gsw6s")

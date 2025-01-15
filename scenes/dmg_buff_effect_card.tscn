@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b80ekt16x7i73"]
+
+[ext_resource type="PackedScene" uid="uid://tyuc3yr6gob0" path="res://scenes/effect_card.tscn" id="1_06la8"]
+[ext_resource type="Script" path="res://scripts/dmg_buff_effect_card.gd" id="2_37h3h"]
+
+[node name="dmg_buff_effect_card" instance=ExtResource("1_06la8")]
+script = ExtResource("2_37h3h")
+dmg_buff = 1
+effect_desc = "increase damage of chosen card"
+card_name = "damager"
+
+[node name="effect_description" parent="." index="3"]
+text = "desc
+asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd"
+font_size = 23
+outline_size = 9
+autowrap_mode = 1
+width = 250.0

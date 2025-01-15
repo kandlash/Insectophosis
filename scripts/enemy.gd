@@ -35,8 +35,8 @@ func place_card(cards: Array):
 	if empty_places.is_empty():
 		return
 	var card_ = get_strongest(cards)
-	print(cards)
 	var card = card_.instantiate()
+	card.is_enemy = true
 	if enemy_resources - card.price < 0:
 		return
 	enemy_resources -= card.price

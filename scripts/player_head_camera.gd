@@ -13,7 +13,7 @@ func _input(event: InputEvent) -> void:
 		var new_object = shoot_ray()
 		if new_object and new_object.is_in_group("turn_ender"):
 			level_manager.turn_base_manager.end_turn("player")
-		if new_object and new_object.name == "card_deck":
+		if new_object and new_object.name == "card_deck" or new_object.name == "effect_card_deck":
 			if level_manager.hand.player_hand.size() == 2 or player.cards == 0:
 				return
 			var new_card = new_object.get_card()
