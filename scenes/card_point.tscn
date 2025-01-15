@@ -23,4 +23,12 @@ transform = Transform3D(0.903898, 0, 0, 0, -2.38183e-08, 1, 0, -0.5449, -4.37114
 material_override = SubResource("StandardMaterial3D_uffna")
 mesh = SubResource("QuadMesh_ukwev")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.242919, 0)
+visible = false
+light_color = Color(1, 0.372549, 1, 1)
+light_energy = 2.84
+omni_range = 0.709
+omni_attenuation = 1.191
+
 [connection signal="child_order_changed" from="." to="." method="_on_child_order_changed"]
