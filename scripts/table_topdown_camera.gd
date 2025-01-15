@@ -41,7 +41,7 @@ func _handle_effect_card(new_object: Object) -> bool:
 		return false
 	if new_object.is_in_group("cards") and !new_object.is_enemy and level_manager.selected_card.is_effect_card:
 		var card_to_delete = level_manager.selected_card
-		level_manager.selected_card.make_effect(new_object)
+		level_manager.selected_card.make_on_card_effect(new_object)
 		update_hand()
 		card_to_delete.queue_free()
 		return true

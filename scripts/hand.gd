@@ -3,6 +3,7 @@ extends Node3D
 var player_hand = []
 @export var card_scene : PackedScene
 const CARD_OFFSET = 0.8
+var hand_max = 4
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

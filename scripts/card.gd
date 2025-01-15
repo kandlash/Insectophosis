@@ -3,7 +3,7 @@ extends "res://scripts/card_base.gd"
 
 @export var hp : int = 3
 @export var dmg : int = 1
-@export var next_stage_card = null
+@export var next_stage_card : PackedScene
 @onready var hp_label := $hp_label
 @onready var attack_label := $attack_label
 @onready var attack_ray := $attack_RayCast3D
@@ -61,3 +61,11 @@ func update_dmg_label():
 
 func make_ready():
 	is_ready = true	
+
+func metamorphose():
+	var parent = get_parent()
+	print(next_stage_card)
+	var new_card = next_stage_card.instantiate()
+	new_card.position = position
+	parent.add_child(new_card)
+	queue_free()

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmhloujamrf7c"]
+
+[ext_resource type="PackedScene" uid="uid://tyuc3yr6gob0" path="res://scenes/effect_card.tscn" id="1_jecxc"]
+[ext_resource type="Script" path="res://scripts/metamorphose_effect_card.gd" id="2_sb5f3"]
+
+[node name="metamorphose_effect_card" instance=ExtResource("1_jecxc")]
+script = ExtResource("2_sb5f3")
+effect_desc = "metamorphose"
+card_name = "meta"

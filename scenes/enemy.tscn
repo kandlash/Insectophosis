@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_4o15g"]
 [ext_resource type="PackedScene" uid="uid://dji2dbytkucc" path="res://scenes/caterpillar_card.tscn" id="2_58sjh"]
-[ext_resource type="PackedScene" uid="uid://dd63bftr53f7n" path="res://scenes/spiny_caterpillar_card.tscn" id="3_0rptc"]
+[ext_resource type="PackedScene" uid="uid://dab8a228lpkhi" path="res://scenes/spiny_cate_card.tscn" id="3_ul4qv"]
 
 [node name="enemy" type="Node3D"]
 script = ExtResource("1_4o15g")
-enemy_cards = [ExtResource("2_58sjh"), ExtResource("3_0rptc")]
+enemy_cards = [ExtResource("2_58sjh"), ExtResource("3_ul4qv")]
