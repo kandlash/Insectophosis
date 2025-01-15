@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvwftk2fanp1g"]
+
+[ext_resource type="ArrayMesh" uid="uid://cj16iecl2751b" path="res://assets/models/radio.obj" id="1_0ofxf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i0esl"]
+size = Vector3(0.562256, 0.90332, 1.13477)
+
+[node name="radio" type="StaticBody3D"]
+
+[node name="Radio" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = ExtResource("1_0ofxf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475731, 0.0379486)
+shape = SubResource("BoxShape3D_i0esl")

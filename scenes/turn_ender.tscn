@@ -16,7 +16,7 @@ skeleton = NodePath("")
 shape = SubResource("BoxShape3D_maeg7")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23225, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15347, 1.13899, 0)
 light_color = Color(1, 0.545098, 0, 1)
 light_energy = 10.926
 light_indirect_energy = 8.704

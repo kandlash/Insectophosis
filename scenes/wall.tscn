@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://e77jb0y8n1cm"]
+
+[ext_resource type="Texture2D" uid="uid://c5tcl386ekyvf" path="res://assets/sprites/Wall_5mtr_u1_v1_diffuse.jpeg" id="1_iq520"]
+[ext_resource type="ArrayMesh" uid="uid://iee8ywxcmpky" path="res://assets/models/wall.obj" id="1_o2lnp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_heum5"]
+albedo_texture = ExtResource("1_iq520")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vwp0"]
+size = Vector3(0.219727, 2.26855, 5.05273)
+
+[node name="wall" type="StaticBody3D"]
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_heum5")
+mesh = ExtResource("1_o2lnp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06609, 0)
+shape = SubResource("BoxShape3D_5vwp0")

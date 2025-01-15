@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkdnqwcf7njen"]
+
+[ext_resource type="ArrayMesh" uid="uid://bhqwlj64jwixq" path="res://assets/models/pipe1.obj" id="1_2ykoh"]
+[ext_resource type="Texture2D" uid="uid://cniosj48arj81" path="res://assets/sprites/modular_pipes_pipes.002_BaseColor.png" id="1_tsvyi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wp08"]
+albedo_texture = ExtResource("1_tsvyi")
+
+[node name="pipe1" type="Node3D"]
+
+[node name="Pipe1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4495, 1.19209e-07, -0.860096)
+material_override = SubResource("StandardMaterial3D_0wp08")
+mesh = ExtResource("1_2ykoh")

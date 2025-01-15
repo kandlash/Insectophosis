@@ -2,8 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://djn4dvgw8mpda" path="res://assets/ka1.ttf" id="1_ocd5q"]
 [ext_resource type="Script" path="res://scripts/effect_card.gd" id="1_ooum0"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_7t4ss"]
+[ext_resource type="ArrayMesh" uid="uid://b0n7asyc0xrk8" path="res://assets/models/card.obj" id="2_0k78d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wm882"]
 size = Vector3(0.910522, 0.0398876, 0.543945)
@@ -19,8 +18,8 @@ collision_mask = 2
 script = ExtResource("1_ooum0")
 
 [node name="card" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.914431, 0, 0, 0, 0.0358521, 0, 0, 0, 0.562295, 0, 0, 0)
-mesh = SubResource("BoxMesh_7t4ss")
+transform = Transform3D(0.495, 0, 0, 0, 0.036, 0, 0, 0, 0.562, 0, 0, 0)
+mesh = ExtResource("2_0k78d")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
