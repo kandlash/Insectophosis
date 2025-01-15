@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dab8a228lpkhi"]
+[gd_scene load_steps=4 format=3 uid="uid://dab8a228lpkhi"]
 
 [ext_resource type="PackedScene" uid="uid://bs2im8ok04b5o" path="res://scenes/card.tscn" id="1_fwit7"]
 [ext_resource type="Script" path="res://scripts/spiny_caterpillar_card.gd" id="2_gfd31"]
+[ext_resource type="ArrayMesh" uid="uid://4lhrgqdt22uj" path="res://assets/models/spiny_caters.obj" id="3_urrn5"]
 
 [node name="spiny_cate_card" instance=ExtResource("1_fwit7")]
 script = ExtResource("2_gfd31")
@@ -9,3 +10,7 @@ hp = 2
 dmg = 3
 card_name = "spiny cate"
 price = 2
+
+[node name="insect_mesh" parent="." index="6"]
+transform = Transform3D(-0.0238448, 0.132853, -0.00189942, 0.132829, 0.0238814, 0.00285026, 0.00314117, -0.00136555, -0.134946, -0.082085, 0.0567354, -0.017932)
+mesh = ExtResource("3_urrn5")

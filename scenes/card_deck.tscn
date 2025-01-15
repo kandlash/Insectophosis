@@ -1,19 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmn5q17yg825e"]
 
 [ext_resource type="Script" path="res://scripts/card_deck.gd" id="1_5dugs"]
+[ext_resource type="ArrayMesh" uid="uid://bj6imshu4gma3" path="res://assets/models/card_deck.obj" id="2_vjdsn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qsdnv"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ktdwl"]
+size = Vector3(1.1687, 0.404877, 0.745361)
 
 [node name="card_deck" type="StaticBody3D"]
 script = ExtResource("1_5dugs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0330811, 0.136612, 0.00476074)
 shape = SubResource("BoxShape3D_qsdnv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, -0.000872665, 0, 0.000872665, 1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("BoxMesh_ktdwl")
+mesh = ExtResource("2_vjdsn")
 
 [node name="card_deck" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.821564, -0.415325)
+light_color = Color(0.643064, 0.264623, 0.107605, 1)
+light_energy = 2.333
+omni_range = 1.50821
+omni_attenuation = 0.295

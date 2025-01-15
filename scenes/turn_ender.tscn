@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dta7e1rq4otf4"]
 
 [ext_resource type="Script" path="res://scripts/turn_ender.gd" id="1_ailct"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_3wgta"]
+[ext_resource type="ArrayMesh" uid="uid://ftho62mlyfac" path="res://assets/models/candle.obj" id="2_62f01"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_maeg7"]
 
@@ -10,8 +9,15 @@
 script = ExtResource("1_ailct")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_3wgta")
+mesh = ExtResource("2_62f01")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_maeg7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23225, 0)
+light_color = Color(1, 0.545098, 0, 1)
+light_energy = 10.926
+light_indirect_energy = 8.704
+omni_range = 2.9269

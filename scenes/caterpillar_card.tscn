@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dji2dbytkucc"]
+[gd_scene load_steps=6 format=3 uid="uid://dji2dbytkucc"]
 
 [ext_resource type="PackedScene" uid="uid://bs2im8ok04b5o" path="res://scenes/card.tscn" id="1_gaxnh"]
 [ext_resource type="Script" path="res://scripts/caterpillar_card.gd" id="2_dmbwh"]
 [ext_resource type="PackedScene" uid="uid://dab8a228lpkhi" path="res://scenes/spiny_cate_card.tscn" id="3_c5iu3"]
+[ext_resource type="ArrayMesh" uid="uid://cnnaqsukro4jn" path="res://assets/models/caterpillar.obj" id="4_4lrx2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3omgv"]
+albedo_color = Color(0.359859, 0.519778, 0.46628, 1)
 
 [node name="caterpillar_card" instance=ExtResource("1_gaxnh")]
 script = ExtResource("2_dmbwh")
@@ -12,3 +16,8 @@ card_name = "caterpillar"
 [node name="name_label" parent="." index="2"]
 text = "caterpillar
 "
+
+[node name="insect_mesh" parent="." index="6"]
+transform = Transform3D(-0.0238448, 0.132853, -0.0018994, 0.132829, 0.0238813, 0.00285025, 0.00314117, -0.00136554, -0.134946, -0.082085, 0.0567354, -0.017932)
+material_override = SubResource("StandardMaterial3D_3omgv")
+mesh = ExtResource("4_4lrx2")
