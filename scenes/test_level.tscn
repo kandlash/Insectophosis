@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dji2dbytkucc" path="res://scenes/caterpillar_card.tscn" id="6_0po5a"]
 [ext_resource type="PackedScene" uid="uid://bmn5q17yg825e" path="res://scenes/card_deck.tscn" id="6_esvkd"]
 [ext_resource type="PackedScene" uid="uid://dab8a228lpkhi" path="res://scenes/spiny_cate_card.tscn" id="8_d3hvq"]
-[ext_resource type="Script" path="res://scripts/turn_base_manager.gd" id="9_px16o"]
+[ext_resource type="PackedScene" uid="uid://bgm1piwwyx2kc" path="res://scenes/turn_base_manager.tscn" id="9_1kroj"]
 [ext_resource type="PackedScene" uid="uid://ce2h5gl4vrl5r" path="res://scenes/ui.tscn" id="10_jmx7d"]
 [ext_resource type="PackedScene" uid="uid://dta7e1rq4otf4" path="res://scenes/turn_ender.tscn" id="11_06ypx"]
 [ext_resource type="PackedScene" uid="uid://bur7d2bnxf58y" path="res://scenes/battle_place.tscn" id="12_41851"]
@@ -96,8 +96,7 @@ ExtResource("6_0po5a"): 999,
 ExtResource("8_d3hvq"): 999
 }
 
-[node name="TurnBaseManager" type="Node3D" parent="."]
-script = ExtResource("9_px16o")
+[node name="TurnBaseManager" parent="." instance=ExtResource("9_1kroj")]
 
 [node name="ui" parent="." instance=ExtResource("10_jmx7d")]
 
