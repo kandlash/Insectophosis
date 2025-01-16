@@ -7,7 +7,6 @@
 [node name="spiny_cate_card" instance=ExtResource("1_fwit7")]
 script = ExtResource("2_gfd31")
 hp = 2
-dmg = 3
 card_name = "spiny cate"
 price = 2
 

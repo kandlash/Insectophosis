@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c60uy4lh83xfc"]
+
+[ext_resource type="PackedScene" uid="uid://bs2im8ok04b5o" path="res://scenes/cards/card.tscn" id="1_7jccg"]
+[ext_resource type="Script" path="res://scripts/cards/pupue_card.gd" id="2_njk0w"]
+
+[node name="pupue_card" instance=ExtResource("1_7jccg")]
+script = ExtResource("2_njk0w")

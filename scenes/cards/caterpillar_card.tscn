@@ -1,16 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dji2dbytkucc"]
+[gd_scene load_steps=8 format=3 uid="uid://dji2dbytkucc"]
 
 [ext_resource type="PackedScene" uid="uid://bs2im8ok04b5o" path="res://scenes/cards/card.tscn" id="1_gaxnh"]
 [ext_resource type="Script" path="res://scripts/cards/caterpillar_card.gd" id="2_dmbwh"]
 [ext_resource type="PackedScene" uid="uid://dab8a228lpkhi" path="res://scenes/cards/spiny_cate_card.tscn" id="3_c5iu3"]
 [ext_resource type="ArrayMesh" uid="uid://cnnaqsukro4jn" path="res://assets/models/caterpillar.obj" id="4_4lrx2"]
+[ext_resource type="PackedScene" uid="uid://1wsgsw0eeudw" path="res://scenes/cards/burny_cate_card.tscn" id="4_rq0fe"]
+[ext_resource type="PackedScene" uid="uid://cm1an3f7ud6sc" path="res://scenes/cards/unstably_cate_card.tscn" id="5_id5j1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3omgv"]
 albedo_color = Color(0.359859, 0.519778, 0.46628, 1)
 
 [node name="caterpillar_card" instance=ExtResource("1_gaxnh")]
 script = ExtResource("2_dmbwh")
-next_stage_card = ExtResource("3_c5iu3")
+mutation_variants_cards = Array[PackedScene]([ExtResource("3_c5iu3"), ExtResource("4_rq0fe"), ExtResource("5_id5j1")])
 card_name = "caterpillar"
 
 [node name="name_label" parent="." index="2"]

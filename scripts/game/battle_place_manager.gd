@@ -16,6 +16,10 @@ extends Node3D
 
 signal end_turn
 
+func _ready() -> void:
+	Globals.set_enemy_places(enemy_card_places)
+	Globals.set_player_places(player_card_places)
+
 func get_enemy_places():
 	return enemy_card_places
 
@@ -32,13 +36,11 @@ func attack(by_who):
 		make_step(enemy_card_places, true)
 
 func make_step(places, is_enemy):
-	print('no cards')
 	for card_place in places:
 		var card = card_place.get_children()[-1]
 		if not card.is_in_group("cards"):
 			continue
+		card.update_turn()
 		card.attack(is_enemy)
 		await card.get_back_ended
-	print('nani nani')
 	end_turn.emit()
-		

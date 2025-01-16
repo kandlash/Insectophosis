@@ -37,12 +37,16 @@ func _is_player_turn() -> bool:
 
 
 func _handle_effect_card(new_object: Object) -> bool:
-	if player.recources - level_manager.selected_card.price < 0:
+	if not new_object.is_in_group("cards") or new_object.is_enemy:
 		return false
-	if new_object.is_in_group("cards") and !new_object.is_enemy and level_manager.selected_card.is_effect_card:
+	var card = new_object
+	if player.recources - (level_manager.selected_card.price + card.price) < 0:
+		return false
+	if level_manager.selected_card.is_effect_card:
 		var card_to_delete = level_manager.selected_card
-		level_manager.selected_card.make_on_card_effect(new_object)
-		update_hand()
+		level_manager.selected_card.make_on_card_effect(card)
+		var price = level_manager.selected_card.price + card.price
+		update_hand(-price)
 		card_to_delete.queue_free()
 		return true
 	return false
@@ -80,10 +84,10 @@ func _place_card(new_object: Object) -> void:
 		0.25
 	).set_trans(Tween.TRANS_SPRING)
 	
-	update_hand()
+	update_hand(-level_manager.selected_card.price)
 
-func update_hand():
-	player.update_recources(-level_manager.selected_card.price)
+func update_hand(price):
+	player.update_recources(price)
 	Globals.game_ui.update_recources()
 	level_manager.hand.remove_card(level_manager.selected_card)
 	level_manager.unselect_card()	

@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://scripts/game/table_topdown_camera.gd" id="5_px578"]
 [ext_resource type="PackedScene" uid="uid://dji2dbytkucc" path="res://scenes/cards/caterpillar_card.tscn" id="6_0po5a"]
 [ext_resource type="PackedScene" uid="uid://bmn5q17yg825e" path="res://scenes/table/card_deck.tscn" id="6_esvkd"]
-[ext_resource type="PackedScene" uid="uid://dab8a228lpkhi" path="res://scenes/cards/spiny_cate_card.tscn" id="8_d3hvq"]
 [ext_resource type="PackedScene" uid="uid://bgm1piwwyx2kc" path="res://scenes/game/turn_base_manager.tscn" id="9_1kroj"]
 [ext_resource type="PackedScene" uid="uid://ce2h5gl4vrl5r" path="res://scenes/game/ui.tscn" id="10_jmx7d"]
 [ext_resource type="PackedScene" uid="uid://dta7e1rq4otf4" path="res://scenes/table/turn_ender.tscn" id="11_06ypx"]
@@ -17,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c5peuf4bq4mra" path="res://scenes/cards/effect_card_deck.tscn" id="15_kr4su"]
 [ext_resource type="PackedScene" uid="uid://b80ekt16x7i73" path="res://scenes/cards/dmg_buff_effect_card.tscn" id="16_jvesd"]
 [ext_resource type="PackedScene" uid="uid://bmhloujamrf7c" path="res://scenes/cards/metamorphose_effect_card.tscn" id="17_qlweq"]
+[ext_resource type="PackedScene" uid="uid://bhy28ekfova6d" path="res://scenes/cards/mutation_card.tscn" id="17_r4818"]
 [ext_resource type="PackedScene" uid="uid://bvwftk2fanp1g" path="res://scenes/table/radio.tscn" id="18_tlsyi"]
 [ext_resource type="PackedScene" uid="uid://e77jb0y8n1cm" path="res://scenes/table/wall.tscn" id="19_uyikw"]
 [ext_resource type="PackedScene" uid="uid://bkdnqwcf7njen" path="res://scenes/table/pipe_1.tscn" id="20_a8ikg"]
@@ -94,8 +94,7 @@ script = ExtResource("5_px578")
 [node name="card_deck" parent="." instance=ExtResource("6_esvkd")]
 transform = Transform3D(0.380642, 0.190661, -0.904854, 0.0380401, 0.974457, 0.221329, 0.92394, -0.118668, 0.363667, -2.32463, 0.202508, 2.34977)
 cards = {
-ExtResource("6_0po5a"): 999,
-ExtResource("8_d3hvq"): 999
+ExtResource("6_0po5a"): 999
 }
 
 [node name="TurnBaseManager" parent="." instance=ExtResource("9_1kroj")]
@@ -117,7 +116,8 @@ transform = Transform3D(0.0793229, 0.0844605, -0.993264, -0.00672368, 0.996427, 
 transform = Transform3D(0.347421, 0, 0, 0, 0.0335405, 0, 0, 0, 0.403115, -2.32386, 0.179979, 1.49897)
 cards = {
 ExtResource("16_jvesd"): 999,
-ExtResource("17_qlweq"): 999
+ExtResource("17_qlweq"): 999,
+ExtResource("17_r4818"): 999
 }
 
 [node name="radio" parent="." instance=ExtResource("18_tlsyi")]
@@ -127,7 +127,7 @@ transform = Transform3D(-0.350744, 0, 1.12273, 0, 1.17624, 0, -1.12273, 0, -0.35
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.656263, 2.48918, 1.50285)
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64566, 1.54439, -2.34037)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47251, 1.54439, -2.34037)
 light_color = Color(1.49205e-06, 0.473864, 0.474496, 1)
 light_energy = 2.513
 

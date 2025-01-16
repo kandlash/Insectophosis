@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm1an3f7ud6sc"]
+
+[ext_resource type="PackedScene" uid="uid://bs2im8ok04b5o" path="res://scenes/cards/card.tscn" id="1_d37yb"]
+[ext_resource type="Script" path="res://scripts/cards/unstably_cate_card.gd" id="2_ow1hf"]
+
+[node name="unstably_cate_card" instance=ExtResource("1_d37yb")]
+script = ExtResource("2_ow1hf")
+min_hp = 1
+max_hp = 3
+min_dmg = 1
+max_dmg = 3
+card_name = "unstably cate"
+price = 2

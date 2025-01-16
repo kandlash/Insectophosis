@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhy28ekfova6d"]
+
+[ext_resource type="PackedScene" uid="uid://tyuc3yr6gob0" path="res://scenes/cards/effect_card.tscn" id="1_cc6do"]
+[ext_resource type="Script" path="res://scripts/cards/mutation_card.gd" id="2_p3f2v"]
+
+[node name="mutation_card" instance=ExtResource("1_cc6do")]
+script = ExtResource("2_p3f2v")
+effect_desc = "mutate card if possible otherwise deals buff"
+card_name = "mutation"

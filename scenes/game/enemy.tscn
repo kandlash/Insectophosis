@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://g11oq2rsi5o5"]
+[gd_scene load_steps=10 format=3 uid="uid://g11oq2rsi5o5"]
 
 [ext_resource type="Script" path="res://scripts/game/enemy.gd" id="1_4o15g"]
 [ext_resource type="PackedScene" uid="uid://dji2dbytkucc" path="res://scenes/cards/caterpillar_card.tscn" id="2_58sjh"]
@@ -8,6 +8,44 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_optup"]
 albedo_texture = ExtResource("4_yx7sy")
+
+[sub_resource type="Animation" id="Animation_v4mfp"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.403576, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tqy5m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_laeoq"]
+_data = {
+"RESET": SubResource("Animation_tqy5m"),
+"idle": SubResource("Animation_v4mfp")
+}
 
 [node name="enemy" type="Node3D"]
 script = ExtResource("1_4o15g")
@@ -19,7 +57,26 @@ material_override = SubResource("StandardMaterial3D_optup")
 mesh = ExtResource("5_lmy16")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.209812, 2.06595, 2.37526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.646223, 2.39858, 1.35961)
 light_color = Color(0.952941, 0.0509804, 0.145098, 1)
-light_energy = 11.074
-omni_range = 2.87305
+light_energy = 1.741
+omni_range = 1.231
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.688595, 2.39858, 1.35961)
+light_color = Color(0.952941, 0.0509804, 0.145098, 1)
+light_energy = 1.741
+omni_range = 1.231
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153691, 0.67473, 1.32211)
+light_color = Color(0.952941, 0.0509804, 0.145098, 1)
+light_energy = 1.741
+omni_range = 1.231
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_laeoq")
+}
+autoplay = "idle"
+speed_scale = 0.565
