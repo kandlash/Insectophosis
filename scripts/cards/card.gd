@@ -1,4 +1,4 @@
-extends "res://scripts/card_base.gd"
+extends "res://scripts/cards/card_base.gd"
 
 
 @export var hp : int = 3

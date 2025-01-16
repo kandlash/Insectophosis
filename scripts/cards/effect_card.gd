@@ -1,4 +1,4 @@
-extends "res://scripts/card_base.gd"
+extends "res://scripts/cards/card_base.gd"
 
 @export var effect_desc : String = "effect description"
 @onready var effect_description: Label3D = $effect_description

@@ -1,1 +1,1 @@
-extends "res://scripts/card.gd"
+extends "res://scripts/cards/card.gd"

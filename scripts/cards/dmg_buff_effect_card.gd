@@ -1,4 +1,4 @@
-extends "res://scripts/effect_card.gd"
+extends "res://scripts/cards/effect_card.gd"
 
 @export var dmg_buff : int = 1
 

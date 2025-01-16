@@ -1,0 +1,192 @@
+[gd_scene load_steps=27 format=3 uid="uid://cv56au188d8q5"]
+
+[ext_resource type="PackedScene" uid="uid://dd5i08ci5bsl" path="res://scenes/game/level_manager.tscn" id="1_jeueq"]
+[ext_resource type="Script" path="res://scripts/game/player_head_camera.gd" id="2_n0eqh"]
+[ext_resource type="PackedScene" uid="uid://cn15i7v1kskfi" path="res://scenes/table/table.tscn" id="2_rji1c"]
+[ext_resource type="PackedScene" uid="uid://bo1hkdxd3fx0t" path="res://scenes/game/hand.tscn" id="3_mf47d"]
+[ext_resource type="Script" path="res://scripts/game/table_topdown_camera.gd" id="5_px578"]
+[ext_resource type="PackedScene" uid="uid://dji2dbytkucc" path="res://scenes/cards/caterpillar_card.tscn" id="6_0po5a"]
+[ext_resource type="PackedScene" uid="uid://bmn5q17yg825e" path="res://scenes/table/card_deck.tscn" id="6_esvkd"]
+[ext_resource type="PackedScene" uid="uid://dab8a228lpkhi" path="res://scenes/cards/spiny_cate_card.tscn" id="8_d3hvq"]
+[ext_resource type="PackedScene" uid="uid://bgm1piwwyx2kc" path="res://scenes/game/turn_base_manager.tscn" id="9_1kroj"]
+[ext_resource type="PackedScene" uid="uid://ce2h5gl4vrl5r" path="res://scenes/game/ui.tscn" id="10_jmx7d"]
+[ext_resource type="PackedScene" uid="uid://dta7e1rq4otf4" path="res://scenes/table/turn_ender.tscn" id="11_06ypx"]
+[ext_resource type="PackedScene" uid="uid://bur7d2bnxf58y" path="res://scenes/table/battle_place.tscn" id="12_41851"]
+[ext_resource type="PackedScene" uid="uid://g11oq2rsi5o5" path="res://scenes/game/enemy.tscn" id="13_widnl"]
+[ext_resource type="PackedScene" uid="uid://blmtb68i7o1o4" path="res://scenes/game/player.tscn" id="14_2adw7"]
+[ext_resource type="PackedScene" uid="uid://c5peuf4bq4mra" path="res://scenes/cards/effect_card_deck.tscn" id="15_kr4su"]
+[ext_resource type="PackedScene" uid="uid://b80ekt16x7i73" path="res://scenes/cards/dmg_buff_effect_card.tscn" id="16_jvesd"]
+[ext_resource type="PackedScene" uid="uid://bmhloujamrf7c" path="res://scenes/cards/metamorphose_effect_card.tscn" id="17_qlweq"]
+[ext_resource type="PackedScene" uid="uid://bvwftk2fanp1g" path="res://scenes/table/radio.tscn" id="18_tlsyi"]
+[ext_resource type="PackedScene" uid="uid://e77jb0y8n1cm" path="res://scenes/table/wall.tscn" id="19_uyikw"]
+[ext_resource type="PackedScene" uid="uid://bkdnqwcf7njen" path="res://scenes/table/pipe_1.tscn" id="20_a8ikg"]
+[ext_resource type="PackedScene" uid="uid://c40qbh8squisg" path="res://scenes/table/pipe_2.tscn" id="21_sdc3t"]
+[ext_resource type="PackedScene" uid="uid://d1bp4hdf11op1" path="res://scenes/table/pipe_3.tscn" id="22_we0ef"]
+[ext_resource type="PackedScene" uid="uid://ctcmupyfwch12" path="res://scenes/table/opener.tscn" id="23_0y115"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4i7pd"]
+
+[sub_resource type="Sky" id="Sky_bfeqi"]
+sky_material = SubResource("PanoramaSkyMaterial_4i7pd")
+
+[sub_resource type="Environment" id="Environment_o2uwe"]
+background_mode = 2
+sky = SubResource("Sky_bfeqi")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.0284044, 0.0343708, 0.0448963, 1)
+fog_light_energy = 2.59
+fog_sun_scatter = 0.79
+fog_density = 0.4312
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.134697, 0.408917, 0.482492, 1)
+volumetric_fog_emission_energy = 217.62
+volumetric_fog_gi_inject = 0.81
+volumetric_fog_anisotropy = -0.05
+volumetric_fog_detail_spread = 1.51572
+
+[node name="test_level" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_o2uwe")
+
+[node name="LevelManager" parent="." instance=ExtResource("1_jeueq")]
+
+[node name="table" parent="." instance=ExtResource("2_rji1c")]
+transform = Transform3D(2.78056, 0, 0, 0, 2, 0, 0, 0, 2, -0.0388034, 0, 0)
+
+[node name="player_head_camera" type="Camera3D" parent="."]
+transform = Transform3D(-0.0196502, 0.339378, -0.940445, 0.00708964, 0.94065, 0.339304, 0.999782, 1.37936e-09, -0.0208901, -3.32688, 1.77659, 0)
+current = true
+fov = 90.0
+script = ExtResource("2_n0eqh")
+
+[node name="hand" parent="." instance=ExtResource("3_mf47d")]
+transform = Transform3D(0.783964, -0.620806, 0, 0.620806, 0.783964, 0, 0, 0, 1, -0.989318, 0.701679, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41538, 1.66171, 0)
+visible = false
+light_color = Color(1, 0.380392, 1, 1)
+light_energy = 4.047
+light_size = 0.54
+light_specular = 9.818
+omni_range = 1.973
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.714668, 0.699464, 0, -0.699464, 0.714668, -1.37794, 3.92073, 1.7715)
+light_color = Color(0.909804, 0.666667, 0.0666667, 1)
+light_energy = 2.53
+light_indirect_energy = 0.059
+light_volumetric_fog_energy = 6.271
+light_size = 0.094
+light_specular = 2.947
+spot_range = 5.47088
+spot_angle = 42.3255
+
+[node name="table_topdown_camera" type="Camera3D" parent="."]
+transform = Transform3D(-1.0437e-08, 0.971076, -0.238771, 4.24471e-08, 0.238771, 0.971076, 1, -1.59872e-14, -4.37114e-08, -0.434568, 1.68495, 0)
+fov = 90.0
+script = ExtResource("5_px578")
+
+[node name="card_deck" parent="." instance=ExtResource("6_esvkd")]
+transform = Transform3D(0.380642, 0.190661, -0.904854, 0.0380401, 0.974457, 0.221329, 0.92394, -0.118668, 0.363667, -2.32463, 0.202508, 2.34977)
+cards = {
+ExtResource("6_0po5a"): 999,
+ExtResource("8_d3hvq"): 999
+}
+
+[node name="TurnBaseManager" parent="." instance=ExtResource("9_1kroj")]
+
+[node name="ui" parent="." instance=ExtResource("10_jmx7d")]
+
+[node name="turn_ender" parent="." instance=ExtResource("11_06ypx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68455, 0.188432, -2.37246)
+
+[node name="battle_place" parent="." instance=ExtResource("12_41851")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.129992, 0)
+
+[node name="enemy" parent="." instance=ExtResource("13_widnl")]
+transform = Transform3D(0.0793229, 0.0844605, -0.993264, -0.00672368, 0.996427, 0.0841924, 0.996826, 0, 0.0796074, 4.23576, -0.150906, 0.447426)
+
+[node name="player" parent="." instance=ExtResource("14_2adw7")]
+
+[node name="effect_card_deck" parent="." instance=ExtResource("15_kr4su")]
+transform = Transform3D(0.347421, 0, 0, 0, 0.0335405, 0, 0, 0, 0.403115, -2.32386, 0.179979, 1.49897)
+cards = {
+ExtResource("16_jvesd"): 999,
+ExtResource("17_qlweq"): 999
+}
+
+[node name="radio" parent="." instance=ExtResource("18_tlsyi")]
+transform = Transform3D(-0.350744, 0, 1.12273, 0, 1.17624, 0, -1.12273, 0, -0.350744, -0.995342, 0.175538, 2.74433)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.656263, 2.48918, 1.50285)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64566, 1.54439, -2.34037)
+light_color = Color(1.49205e-06, 0.473864, 0.474496, 1)
+light_energy = 2.513
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.365, 7.21141, 1.50285)
+light_energy = 5.92
+
+[node name="wall" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0.979061, 0, 3.57848)
+
+[node name="wall3" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0.979061, 4.15111, 3.61606)
+
+[node name="wall6" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 10.99, 0, 3.57848)
+
+[node name="wall7" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 10.99, 4.15111, 3.61606)
+
+[node name="wall5" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-0.0919813, 1.57335e-07, 1.99788, 1.99788, -1.43485e-07, 0.0919813, 8.74228e-08, 3.44462, -8.74228e-08, 4.13149, -0.0183439, -4.15479)
+
+[node name="wall10" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(3.82137e-15, -2.10449e-07, 2, -2, -2.10449e-07, 0, 8.74228e-08, -4.81451, -8.74228e-08, 12.377, 7.7919, 3.8401)
+
+[node name="wall2" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0.795986, 0, -3.796)
+
+[node name="wall4" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0.795986, 4.29477, -3.796)
+
+[node name="wall8" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 10.8009, 0, -3.796)
+
+[node name="wall9" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 10.8009, 4.29477, -3.796)
+
+[node name="pipes" type="Node3D" parent="."]
+
+[node name="pipe1" parent="pipes" instance=ExtResource("20_a8ikg")]
+transform = Transform3D(1, 0, 0, 0, 0.0952724, 0.995451, 0, -0.995451, 0.0952724, -1.48452, 1.27455, 3.27276)
+
+[node name="pipe_2" parent="pipes" instance=ExtResource("21_sdc3t")]
+transform = Transform3D(1, 0, 0, 0, -0.00881379, 0.999961, 0, -0.999961, -0.00881379, 1.48211, 3.20014, 3.24763)
+
+[node name="pipe_4" parent="pipes" instance=ExtResource("21_sdc3t")]
+transform = Transform3D(0.0504186, -0.00880258, 0.998689, -0.998728, -0.000444379, 0.0504167, 0, -0.999961, -0.00881379, -0.118296, 0.669719, -3.51948)
+
+[node name="pipe_6" parent="pipes" instance=ExtResource("21_sdc3t")]
+transform = Transform3D(0.810997, -0.00914077, 0.584978, -0.585044, -0.00832186, 0.810959, -0.00254468, -0.999924, -0.0120968, -0.860756, 0.064116, -3.51948)
+
+[node name="pipe_3" parent="pipes" instance=ExtResource("22_we0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.57594, 3.3046, 3.13329)
+
+[node name="pipe_5" parent="pipes" instance=ExtResource("22_we0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55232, 1.59505, -3.4115)
+
+[node name="pipe_7" parent="pipes" instance=ExtResource("22_we0ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20014, 2.29681, -3.4115)
+
+[node name="opener" parent="pipes" instance=ExtResource("23_0y115")]
+transform = Transform3D(0.00239931, 0.0590185, -0.137881, -0.149953, -0.0017007, -0.00333736, -0.0028764, 0.137891, 0.0589729, -2.53979, 0.197415, -2.0313)
