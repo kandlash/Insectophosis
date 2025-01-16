@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dab8a228lpkhi"]
+[gd_scene load_steps=5 format=3 uid="uid://dab8a228lpkhi"]
 
 [ext_resource type="PackedScene" uid="uid://bs2im8ok04b5o" path="res://scenes/cards/card.tscn" id="1_fwit7"]
 [ext_resource type="Script" path="res://scripts/cards/spiny_caterpillar_card.gd" id="2_gfd31"]
+[ext_resource type="PackedScene" uid="uid://bn07ejbhdpvrv" path="res://scenes/cards/spiny_pupue_card.tscn" id="3_iijp4"]
 [ext_resource type="ArrayMesh" uid="uid://4lhrgqdt22uj" path="res://assets/models/spiny_caters.obj" id="3_urrn5"]
 
 [node name="spiny_cate_card" instance=ExtResource("1_fwit7")]
 script = ExtResource("2_gfd31")
 hp = 2
+next_stage_card = ExtResource("3_iijp4")
 card_name = "spiny cate"
 price = 2
 

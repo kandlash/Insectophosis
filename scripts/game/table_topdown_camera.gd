@@ -19,7 +19,8 @@ func _input(event: InputEvent) -> void:
 	var new_object = shoot_ray()
 	if not new_object:
 		return
-
+	if not level_manager.selected_card:
+		return
 	# Обрабатываем карты с эффектами
 	if _handle_effect_card(new_object):
 		return

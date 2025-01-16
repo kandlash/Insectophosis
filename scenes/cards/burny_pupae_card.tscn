@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://qujmkx0mmx83"]
+
+[ext_resource type="PackedScene" uid="uid://c60uy4lh83xfc" path="res://scenes/cards/pupue_card.tscn" id="1_ius4r"]
+[ext_resource type="Script" path="res://scripts/cards/burny_pupae_card.gd" id="2_qkm2i"]
+
+[node name="burny_pupae_card" instance=ExtResource("1_ius4r")]
+script = ExtResource("2_qkm2i")
+hp = 5
+dmg = 2
+card_name = "card name"
+price = 3
+
+[node name="insect_mesh" parent="." index="6"]
+transform = Transform3D(-0.000366493, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -0.000366493, 1.60199e-11, 0, -0.0129628, 0)

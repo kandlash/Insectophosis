@@ -20,6 +20,7 @@ func _ready() -> void:
 	$card.material_override = newMaterial
 	name_label.text = card_name
 	price_label.text = str(price)
+	prev_position = position
 
 func make_selected():
 	prev_position = position
@@ -38,4 +39,4 @@ func get_back():
 	 "position",
 	 prev_position,
 	 0.15).set_trans(Tween.TRANS_SPRING)
-	get_back_ended.emit()
+	tween.tween_callback(get_back_ended.emit)

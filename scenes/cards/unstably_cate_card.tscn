@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm1an3f7ud6sc"]
+[gd_scene load_steps=4 format=3 uid="uid://cm1an3f7ud6sc"]
 
 [ext_resource type="PackedScene" uid="uid://bs2im8ok04b5o" path="res://scenes/cards/card.tscn" id="1_d37yb"]
 [ext_resource type="Script" path="res://scripts/cards/unstably_cate_card.gd" id="2_ow1hf"]
+[ext_resource type="PackedScene" uid="uid://da23uphbxn6v1" path="res://scenes/cards/unstably_pupae_card.tscn" id="3_vfwhc"]
 
 [node name="unstably_cate_card" instance=ExtResource("1_d37yb")]
 script = ExtResource("2_ow1hf")
@@ -9,5 +10,6 @@ min_hp = 1
 max_hp = 3
 min_dmg = 1
 max_dmg = 3
+next_stage_card = ExtResource("3_vfwhc")
 card_name = "unstably cate"
 price = 2

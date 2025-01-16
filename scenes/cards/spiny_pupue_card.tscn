@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn07ejbhdpvrv"]
+
+[ext_resource type="PackedScene" uid="uid://c60uy4lh83xfc" path="res://scenes/cards/pupue_card.tscn" id="1_kus6k"]
+[ext_resource type="Script" path="res://scripts/cards/spiny_pupue_card.gd" id="2_do4n0"]
+
+[node name="spiny_pupue_card" instance=ExtResource("1_kus6k")]
+script = ExtResource("2_do4n0")
+hp = 5
+dmg = 5
+card_name = "spiny pupae"
+
+[node name="insect_mesh" parent="." index="6"]
+transform = Transform3D(-0.000366493, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -0.000366493, 1.60199e-11, 0, -0.0129628, 0)

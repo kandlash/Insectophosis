@@ -49,13 +49,17 @@ func attack(is_enemy):
 	if not collider.is_in_group("cards"):
 		return
 	await get_back_ended
-	collider.get_damage(dmg, self)
+	if collider:
+		collider.get_damage(dmg, self)
 
 func get_damage(damage: int, card=null):
 	hp -= damage
 	if hp <= 0:
-		queue_free()
+		death()
 	update_hp_label()
+
+func death():
+	queue_free()
 
 func update_hp_label():
 	hp_label.text = str(hp)

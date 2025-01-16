@@ -38,9 +38,7 @@ func _input(event: InputEvent) -> void:
 			selected_card.make_selected()
 			level_manager.selected_card = selected_card
 			return
-		
-
-
+			
 func select_card():
 	pass
 

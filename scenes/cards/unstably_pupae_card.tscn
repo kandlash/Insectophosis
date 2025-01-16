@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://da23uphbxn6v1"]
+
+[ext_resource type="PackedScene" uid="uid://c60uy4lh83xfc" path="res://scenes/cards/pupue_card.tscn" id="1_khiag"]
+[ext_resource type="Script" path="res://scripts/cards/unstably_pupae_card.gd" id="2_6f2p1"]
+
+[node name="unstably_pupae_card" instance=ExtResource("1_khiag")]
+script = ExtResource("2_6f2p1")
+min_hp = 3
+max_hp = 5
+min_dmg = 3
+max_dmg = 6
+hp = 8
+card_name = "card name"
+price = 1
