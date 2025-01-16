@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cr3a40n6ismvt"
-path="res://.godot/imported/Monocraft.otf-d9a3e142cc01906effc35717e18d20bd.fontdata"
+uid="uid://djn4dvgw8mpda"
+path="res://.godot/imported/ka1.ttf-f94fd73f6e4b266204211ac670a1b03a.fontdata"
 
 [deps]
 
-source_file="res://assets/Monocraft.otf"
-dest_files=["res://.godot/imported/Monocraft.otf-d9a3e142cc01906effc35717e18d20bd.fontdata"]
+source_file="res://assets/fonts/ka1.ttf"
+dest_files=["res://.godot/imported/ka1.ttf-f94fd73f6e4b266204211ac670a1b03a.fontdata"]
 
 [params]
 

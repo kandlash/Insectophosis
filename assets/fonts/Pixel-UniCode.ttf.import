@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bimwi2yvlmgm0"
-path="res://.godot/imported/Minercraftory.ttf-85bb0cd0c421df391f8515ecb2cec4bf.fontdata"
+uid="uid://bno446cr0pud3"
+path="res://.godot/imported/Pixel-UniCode.ttf-a2e820f0c9372d568a32503b71632f4e.fontdata"
 
 [deps]
 
-source_file="res://assets/Minercraftory.ttf"
-dest_files=["res://.godot/imported/Minercraftory.ttf-85bb0cd0c421df391f8515ecb2cec4bf.fontdata"]
+source_file="res://assets/fonts/Pixel-UniCode.ttf"
+dest_files=["res://.godot/imported/Pixel-UniCode.ttf-a2e820f0c9372d568a32503b71632f4e.fontdata"]
 
 [params]
 

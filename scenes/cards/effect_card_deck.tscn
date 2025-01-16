@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5peuf4bq4mra"]
 
-[ext_resource type="PackedScene" uid="uid://bmn5q17yg825e" path="res://scenes/card_deck.tscn" id="1_jrn66"]
+[ext_resource type="PackedScene" uid="uid://bmn5q17yg825e" path="res://scenes/table/card_deck.tscn" id="1_jrn66"]
 
 [node name="effect_card_deck" instance=ExtResource("1_jrn66")]

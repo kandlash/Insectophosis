@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bno446cr0pud3"
-path="res://.godot/imported/Pixel-UniCode.ttf-6962b557f33f90378c29e64abd02e67c.fontdata"
+uid="uid://cr3a40n6ismvt"
+path="res://.godot/imported/Monocraft.otf-761c038479c8173e633168f551bc7c8e.fontdata"
 
 [deps]
 
-source_file="res://assets/Pixel-UniCode.ttf"
-dest_files=["res://.godot/imported/Pixel-UniCode.ttf-6962b557f33f90378c29e64abd02e67c.fontdata"]
+source_file="res://assets/fonts/Monocraft.otf"
+dest_files=["res://.godot/imported/Monocraft.otf-761c038479c8173e633168f551bc7c8e.fontdata"]
 
 [params]
 

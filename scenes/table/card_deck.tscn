@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmn5q17yg825e"]
 
-[ext_resource type="Script" path="res://scripts/card_deck.gd" id="1_5dugs"]
+[ext_resource type="Script" path="res://scripts/table/card_deck.gd" id="1_5dugs"]
 [ext_resource type="ArrayMesh" uid="uid://bj6imshu4gma3" path="res://assets/models/card_deck.obj" id="2_vjdsn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qsdnv"]

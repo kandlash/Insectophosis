@@ -11,12 +11,12 @@ config_version=5
 [application]
 
 config/name="Insectophosis"
-run/main_scene="res://scenes/test_level.tscn"
+run/main_scene="res://scenes/game/test_level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
 
-Globals="*res://scripts/globals.gd"
+Globals="*res://scripts/game/globals.gd"
 
 [display]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bur7d2bnxf58y"]
 
-[ext_resource type="PackedScene" uid="uid://xiq3fggbh4kc" path="res://scenes/card_point.tscn" id="1_0u0cy"]
-[ext_resource type="Script" path="res://scripts/battle_place_manager.gd" id="1_8kuqb"]
+[ext_resource type="PackedScene" uid="uid://xiq3fggbh4kc" path="res://scenes/table/card_point.tscn" id="1_0u0cy"]
+[ext_resource type="Script" path="res://scripts/game/battle_place_manager.gd" id="1_8kuqb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f44a5"]
 albedo_color = Color(1, 0, 0, 1)

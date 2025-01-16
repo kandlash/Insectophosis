@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://xiq3fggbh4kc"]
 
 [ext_resource type="Texture2D" uid="uid://dgdjkysbhj87x" path="res://assets/sprites/test_border.png" id="1_u6wp1"]
-[ext_resource type="Script" path="res://scripts/card_point.gd" id="1_unulx"]
+[ext_resource type="Script" path="res://scripts/table/card_point.gd" id="1_unulx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0rnb0"]
 size = Vector3(0.918945, 0.0527344, 0.558838)

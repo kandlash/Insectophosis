@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dji2dbytkucc"]
 
-[ext_resource type="PackedScene" uid="uid://bs2im8ok04b5o" path="res://scenes/card.tscn" id="1_gaxnh"]
-[ext_resource type="Script" path="res://scripts/caterpillar_card.gd" id="2_dmbwh"]
-[ext_resource type="PackedScene" uid="uid://dab8a228lpkhi" path="res://scenes/spiny_cate_card.tscn" id="3_c5iu3"]
+[ext_resource type="PackedScene" uid="uid://bs2im8ok04b5o" path="res://scenes/cards/card.tscn" id="1_gaxnh"]
+[ext_resource type="Script" path="res://scripts/cards/caterpillar_card.gd" id="2_dmbwh"]
+[ext_resource type="PackedScene" uid="uid://dab8a228lpkhi" path="res://scenes/cards/spiny_cate_card.tscn" id="3_c5iu3"]
 [ext_resource type="ArrayMesh" uid="uid://cnnaqsukro4jn" path="res://assets/models/caterpillar.obj" id="4_4lrx2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3omgv"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://g11oq2rsi5o5"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_4o15g"]
-[ext_resource type="PackedScene" uid="uid://dji2dbytkucc" path="res://scenes/caterpillar_card.tscn" id="2_58sjh"]
-[ext_resource type="PackedScene" uid="uid://dab8a228lpkhi" path="res://scenes/spiny_cate_card.tscn" id="3_ul4qv"]
+[ext_resource type="Script" path="res://scripts/game/enemy.gd" id="1_4o15g"]
+[ext_resource type="PackedScene" uid="uid://dji2dbytkucc" path="res://scenes/cards/caterpillar_card.tscn" id="2_58sjh"]
+[ext_resource type="PackedScene" uid="uid://dab8a228lpkhi" path="res://scenes/cards/spiny_cate_card.tscn" id="3_ul4qv"]
 [ext_resource type="Texture2D" uid="uid://dg0jdttjarh6j" path="res://assets/sprites/enemy2.png" id="4_yx7sy"]
 [ext_resource type="ArrayMesh" uid="uid://bfsygytxbxg27" path="res://assets/models/enemy.obj" id="5_lmy16"]
 

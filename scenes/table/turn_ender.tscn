@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dta7e1rq4otf4"]
 
-[ext_resource type="Script" path="res://scripts/turn_ender.gd" id="1_ailct"]
+[ext_resource type="Script" path="res://scripts/table/turn_ender.gd" id="1_ailct"]
 [ext_resource type="ArrayMesh" uid="uid://ftho62mlyfac" path="res://assets/models/candle.obj" id="2_62f01"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_maeg7"]

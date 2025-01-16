@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://tyuc3yr6gob0"]
 
-[ext_resource type="FontFile" uid="uid://djn4dvgw8mpda" path="res://assets/ka1.ttf" id="1_ocd5q"]
-[ext_resource type="Script" path="res://scripts/effect_card.gd" id="1_ooum0"]
+[ext_resource type="FontFile" uid="uid://djn4dvgw8mpda" path="res://assets/fonts/ka1.ttf" id="1_ocd5q"]
+[ext_resource type="Script" path="res://scripts/cards/effect_card.gd" id="1_ooum0"]
 [ext_resource type="ArrayMesh" uid="uid://b0n7asyc0xrk8" path="res://assets/models/card.obj" id="2_0k78d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wm882"]

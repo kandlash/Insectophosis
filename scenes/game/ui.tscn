@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce2h5gl4vrl5r"]
 
-[ext_resource type="FontFile" uid="uid://bimwi2yvlmgm0" path="res://assets/Minercraftory.ttf" id="1_3lv0s"]
-[ext_resource type="Script" path="res://scripts/ui.gd" id="1_o4w2j"]
+[ext_resource type="FontFile" uid="uid://bimwi2yvlmgm0" path="res://assets/fonts/Minercraftory.ttf" id="1_3lv0s"]
+[ext_resource type="Script" path="res://scripts/game/ui.gd" id="1_o4w2j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oe0h0"]
 font = ExtResource("1_3lv0s")
