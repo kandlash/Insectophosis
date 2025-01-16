@@ -109,7 +109,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68455, 0.188432, -2.37246)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.129992, 0)
 
 [node name="enemy" parent="." instance=ExtResource("13_widnl")]
-transform = Transform3D(0.0793229, 0.0844605, -0.993264, -0.00672368, 0.996427, 0.0841924, 0.996826, 0, 0.0796074, 4.23576, -0.150906, 0)
+transform = Transform3D(0.0793229, 0.0844605, -0.993264, -0.00672368, 0.996427, 0.0841924, 0.996826, 0, 0.0796074, 4.23576, -0.150906, 0.447426)
 
 [node name="player" parent="." instance=ExtResource("14_2adw7")]
 
@@ -124,13 +124,46 @@ ExtResource("17_qlweq"): 999
 transform = Transform3D(-0.350744, 0, 1.12273, 0, 1.17624, 0, -1.12273, 0, -0.350744, -0.995342, 0.175538, 2.74433)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.656263, 2.84374, 1.605)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.656263, 2.48918, 1.50285)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64566, 1.54439, -2.34037)
+light_color = Color(1.49205e-06, 0.473864, 0.474496, 1)
+light_energy = 2.513
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.365, 7.21141, 1.50285)
+light_energy = 5.92
 
 [node name="wall" parent="." instance=ExtResource("19_uyikw")]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0.979061, 0, 3.57848)
 
+[node name="wall3" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0.979061, 4.15111, 3.61606)
+
+[node name="wall6" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 10.99, 0, 3.57848)
+
+[node name="wall7" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 10.99, 4.15111, 3.61606)
+
+[node name="wall5" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-0.0919813, 1.57335e-07, 1.99788, 1.99788, -1.43485e-07, 0.0919813, 8.74228e-08, 3.44462, -8.74228e-08, 4.13149, -0.0183439, -4.15479)
+
+[node name="wall10" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(3.82137e-15, -2.10449e-07, 2, -2, -2.10449e-07, 0, 8.74228e-08, -4.81451, -8.74228e-08, 12.377, 7.7919, 3.8401)
+
 [node name="wall2" parent="." instance=ExtResource("19_uyikw")]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0.795986, 0, -3.796)
+
+[node name="wall4" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0.795986, 4.29477, -3.796)
+
+[node name="wall8" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 10.8009, 0, -3.796)
+
+[node name="wall9" parent="." instance=ExtResource("19_uyikw")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 10.8009, 4.29477, -3.796)
 
 [node name="pipes" type="Node3D" parent="."]
 
