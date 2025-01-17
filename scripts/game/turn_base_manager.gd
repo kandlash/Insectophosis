@@ -19,8 +19,8 @@ func end_turn(by_who):
 		battle_place.attack("player")
 	elif by_who == "enemy":
 		battle_place.attack("enemy")
-		
 	await battle_place.end_turn
+
 	if by_who == "enemy":
 		timer.start()
 		await level_manager.end_trans

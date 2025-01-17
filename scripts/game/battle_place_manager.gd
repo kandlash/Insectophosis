@@ -14,6 +14,9 @@ extends Node3D
 	$"enemy_place/card_place4/card_point",
 ]
 
+var is_first_round = true
+@onready var f_r_delay: Timer = $f_r_delay
+
 signal end_turn
 
 func _ready() -> void:
@@ -36,6 +39,10 @@ func attack(by_who):
 		make_step(enemy_card_places, true)
 
 func make_step(places, is_enemy):
+	if is_first_round:
+		is_first_round = false
+		f_r_delay.start()
+		return
 	for card_place in places:
 		var card = card_place.get_children()[-1]
 		if not card.is_in_group("cards"):
@@ -43,4 +50,8 @@ func make_step(places, is_enemy):
 		card.update_turn()
 		card.attack(is_enemy)
 		await card.get_back_ended
+	end_turn.emit()
+
+
+func _on_timer_timeout() -> void:
 	end_turn.emit()

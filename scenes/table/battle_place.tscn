@@ -147,3 +147,9 @@ mesh = SubResource("BoxMesh_cx85b")
 
 [node name="card_point" parent="player_place/card_place8" instance=ExtResource("1_0u0cy")]
 transform = Transform3D(1, 0, 0, 0, 10, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="f_r_delay" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="f_r_delay" to="." method="_on_timer_timeout"]
